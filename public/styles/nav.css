@@ -4,6 +4,8 @@
 
 nav {
   border: 1px solid black; /* For learning purposes.  REMOVE before submission */
+  display: flex;
+  justify-content: space-between;
   height: 120px;
   width: 100vw;
   background-color: #4056A1;
