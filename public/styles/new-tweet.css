@@ -1,18 +1,23 @@
+.new-tweet {
+  width: 100%;
+  height: 150px;
+}
+
 #tweet-text {
   border: none;
   border-bottom: 2px solid black;
   margin-top: 5px;
   width: 100%;
-  height: 30px;
+  /* height: 30px; */
   resize: none;
 }
 
-.new-tweet {
-  width: 100%;
-}
-
-.new-tweet h2 {
+/* .new-tweet h2 {
   margin: 0;
+} */
+
+.form-tweet {
+  padding: 10px 0;
 }
 
 .form-tweet div {
@@ -31,6 +36,5 @@
 .invalid-input {
   color: red;
 }
-
 
 

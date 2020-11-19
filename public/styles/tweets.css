@@ -1,0 +1,51 @@
+#tweets {
+  border: 2px solid black;
+  
+}
+
+.tweet {
+  /* height: 500px; */
+  /* margin: 0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 2px solid red;
+
+}
+
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet header div {
+  display: flex;
+}
+
+.user-container {
+  margin: 10px;
+}
+
+.handle {
+  padding: 10px;
+}
+
+.tweet footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet img {
+  padding: 0;
+}
+
+.tweet p {
+  border: 2px solid black;
+}
+
+.tweet div {
+  border: 2px solid black;
+}
+
+
+
