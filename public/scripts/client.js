@@ -49,7 +49,7 @@ $(document).ready(function(){
   $('.form-tweet').submit(function(event) {
     event.preventDefault();
 
-    const tweet = $('.form-tweet :input').val();
+    const tweet = $(':input').val();
 
     if(!tweet) {
       alert('No input. Please try again!');
@@ -62,6 +62,7 @@ $(document).ready(function(){
         data: $(this).serialize() 
       })
       .then(function(){
+        $(':input').val(null);
         $('#tweets').empty();
         loadTweets();
       });
