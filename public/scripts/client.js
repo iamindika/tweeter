@@ -49,16 +49,23 @@ $(document).ready(function(){
   $('.form-tweet').submit(function(event) {
     event.preventDefault();
 
-    $.ajax({
-      type: "POST", 
-      url: '/tweets',  
-      data: $(this).serialize() 
-    })
-    .then(function(){
-      $('#tweets').empty();
-      loadTweets();
-    });
-    
+    const tweet = $('.form-tweet :input').val();
+
+    if(!tweet) {
+      alert('No input. Please try again!');
+    } else if (tweet.length > 140) {
+      alert('Exceeded total number of characters allowed!');
+    } else {
+      $.ajax({
+        type: "POST", 
+        url: '/tweets',  
+        data: $(this).serialize() 
+      })
+      .then(function(){
+        $('#tweets').empty();
+        loadTweets();
+      });
+    }
   });
 });
 
