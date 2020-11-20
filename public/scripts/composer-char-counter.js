@@ -1,5 +1,3 @@
-// const { on } = require("nodemon");
-
 $(document).ready(function() {
   
   $('.new-tweet textarea').on('input', function() {
@@ -13,9 +11,5 @@ $(document).ready(function() {
     }
     $(output).text(counter);
   });
-  
-  // $("#tweet-text").on("keypress", function() {
-  //   console.log(($this).val());
-  // });
   
 });

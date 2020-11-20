@@ -3,12 +3,15 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+ // No Cross Scripting
 const noXSS = function(tweet) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(tweet))
   return div.innerHTML;  
 }
 
+// Create Tweets
 const renderTweets = function(tweetArray) {
   for (const tweetObj of tweetArray) {
     const $tweet = createTweetElement(tweetObj);
@@ -40,6 +43,7 @@ const createTweetElement = function(tweetData) {
         return $tweet;
 };
 
+// AJAX handling
 $(document).ready(function(){
 
   $('#error-message').hide();
