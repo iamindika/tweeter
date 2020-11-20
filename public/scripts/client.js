@@ -37,6 +37,8 @@ const createTweetElement = function(tweetData) {
 
 $(document).ready(function(){
 
+  $('#error-message').hide();
+
   const loadTweets = function () {
     $.ajax('/tweets', {method: 'GET'})
     .then(function(moreTweets) {
@@ -49,12 +51,18 @@ $(document).ready(function(){
   $('.form-tweet').submit(function(event) {
     event.preventDefault();
 
-    const tweet = $(':input').val();
+    const noXSS = function(tweet) {
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(tweet))
+      return div.innerHTML;  
+    }
+
+    const tweet = noXSS($(':input').val());
 
     if(!tweet) {
       alert('No input. Please try again!');
     } else if (tweet.length > 140) {
-      alert('Exceeded total number of characters allowed!');
+      alert('Exceeded total number of characters allowed (140). Try again!');
     } else {
       $.ajax({
         type: "POST", 
