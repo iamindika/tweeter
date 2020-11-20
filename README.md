@@ -2,7 +2,10 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-# Final Project
+## Final Product
+
+!["Screenshot of desktop view of tweeter app!"](https://github.com/iamindika/tweeter/blob/master/docs/tweeter-desktop.png)
+!["Screenshot of tablet view of tweeter app!"](https://github.com/iamindika/tweeter/blob/master/docs/tweeter-tablet.png)
 
 ## Getting Started
 
