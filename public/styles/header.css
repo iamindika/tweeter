@@ -18,7 +18,7 @@ main {
 
 @media only screen and (min-width: 1024px) {
   .header-main {
-    margin-top: 50px; 
+    margin-top: 175px; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;

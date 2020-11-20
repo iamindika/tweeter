@@ -6,7 +6,7 @@ nav {
   display: flex;
   justify-content: space-between;
   height: 120px;
-  width: 100vw;
+  width: 100%;
   background-color: #cc9900;
   
   color: #FFFFFF;
@@ -16,6 +16,7 @@ nav {
 @media only screen and (min-width: 1024px) {
   nav {
     background-color: #4056A1;
+    position: fixed;
+    top: 0;
   }
-  
 }
