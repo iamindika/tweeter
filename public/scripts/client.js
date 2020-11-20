@@ -3,6 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const noXSS = function(tweet) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(tweet))
+  return div.innerHTML;  
+}
 
 const renderTweets = function(tweetArray) {
   for (const tweetObj of tweetArray) {
@@ -21,7 +26,7 @@ const createTweetElement = function(tweetData) {
             </div>
             <p class="handle">${tweetData.user.handle}</p>
           </header>
-          <p>${tweetData.content.text}</p>
+          <p>${noXSS(tweetData.content.text)}</p>
           <footer>
             <p class="date">${tweetData['created_at']}</p>
             <div>
@@ -48,16 +53,14 @@ $(document).ready(function(){
 
    loadTweets();
 
+  $('.form-tweet').on('keydown', function() {
+    $('#error-message').hide();
+  });
+
   $('.form-tweet').submit(function(event) {
     event.preventDefault();
 
-    const noXSS = function(tweet) {
-      let div = document.createElement('div');
-      div.appendChild(document.createTextNode(tweet))
-      return div.innerHTML;  
-    }
-
-    const tweet = noXSS($(':input').val());
+    const tweet = $(':input').val();
 
     $('#error-message').hide();
 
@@ -71,7 +74,7 @@ $(document).ready(function(){
       $.ajax({
         type: "POST", 
         url: '/tweets',  
-        data: $(this).serialize() 
+        data: $(this).serialize()
       })
       .then(function(){
         $(':input').val(null);
