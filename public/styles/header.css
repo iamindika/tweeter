@@ -1,11 +1,46 @@
 .profile-header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 400px;
   width: 100vw;
   background-color: #cc9900;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   color: #FFFFFF;
+}
+
+main {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .header-main {
+    margin-top: 50px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   }
+  
+  .profile-header {
+    margin-left: 50px;
+    width: 30%;
+  }
+
+  main {
+    width: 50%;
+    margin: 0 50px 0 0;
+  }
+
+  .profile-header h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .profile-header img {
+    margin-top: 25px;
+  }
 }

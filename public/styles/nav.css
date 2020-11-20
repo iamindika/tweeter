@@ -7,7 +7,15 @@ nav {
   justify-content: space-between;
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
+  background-color: #cc9900;
+  
   color: #FFFFFF;
   padding: 1.5em;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
+  
 }
