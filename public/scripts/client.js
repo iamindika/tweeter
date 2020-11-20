@@ -59,10 +59,14 @@ $(document).ready(function(){
 
     const tweet = noXSS($(':input').val());
 
+    $('#error-message').hide();
+
     if(!tweet) {
-      alert('No input. Please try again!');
+      $('#error-message').text('No input. Please try again!');
+      $('#error-message').slideDown('slow', function() {});
     } else if (tweet.length > 140) {
-      alert('Exceeded total number of characters allowed (140). Try again!');
+      $('#error-message').text('Exceeded total number of characters allowed (140). Try again!');
+      $('#error-message').slideDown('slow', function() {});
     } else {
       $.ajax({
         type: "POST", 
